@@ -18,17 +18,14 @@ public class HandlingScreenshot
 			   
 			  TakesScreenshot scrShot = ((TakesScreenshot) driver);
 			  File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);    
-			  FileUtils.copyFile(SrcFile, new File ("C:\\Users\\tfating\\EDM Cucumber Automation Project\\Screenshots\\"+TestCaseName+"\\"+ScreenshotName+".png"));
+			  FileUtils.copyFile(SrcFile, new File ("/home/vishnu/Documents/Trupti_Test_Automation/"+
+			  "New_Automation_Scripts/Cucumber_Automation/Screenshots/"+TestCaseName+"/"+ScreenshotName+".png"));
 			  System.out.println("ScreenShot Taken");	  		  
 			} 
 			catch (Exception e) 
 			{
 			    System.out.println("Exception while taking ScreenShot "+e.getMessage());
 			}
-
-
-		  
-
-		
+	
 	  }
 }

@@ -2,7 +2,16 @@ package com.qa.pageobjects;
 
 import org.openqa.selenium.By;
 
+
 public class HomePageObjects 
 {
-	public static final By JaguarLogo=By.xpath("//img[@class='navbar-left' and contains(@src,'jag_logo')]");
+	/*public static final By FirstName=By.name("firstname");
+	public static final By LastName=By.name("lastname");
+	public static final By MobileNo= By.xpath(" //*[@id=\"u_0_r\"]");
+	public static final By ForgottenAccountLink=By.linkText("Forgotten account?");*/
+	
+	public static final By UserName= By.xpath("//*[@id=\"email\"]");
+	public static final By Password= By.xpath("//*[@id=\"pass\"]");
+	public static final By LoginButton= By.xpath("//*[@id=\"u_0_b\"]");
+    
 }
