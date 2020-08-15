@@ -7,11 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "/home/vishnu/Documents/Trupti_Test_Automation/New_Automation_Scripts/"+
-"Cucumber_Automation/src/main/java/features/login.feature"
- ,glue={"/home/vishnu/Documents/Trupti_Test_Automation/New_Automation_Scripts/"+
-"Cucumber_Automation/src/main/java/com/qa/stepdefinattion/StepDefination.java"}
- 
+ features = "/home/vishnu/Documents/Trupti_Test_Automation/New_Automation_Scripts/Cucumber_Automation/src/main/java/features"
+ ,glue={"com.qa.stepdefinattion"}
+ ,dryRun=false
+		
  )
 
 public class TestRunner 
