@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.qa.pageobjects.HomePageObjects;
+
 //import com.qa.pageobjects.HomePageObjects;
 
 //import com.qa.pageobjects.HomePageObjects;
@@ -40,24 +42,18 @@ public class StepDefination
 		 driver.get("https://www.facebook.com/");
 	}
 	
-	@When("^user enters Credentials$")
-	public void user_enters_Credentials() throws Throwable {
-		 driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("trupti"); 
-	//	 driver.findElement(HomePageObjects.Password).sendKeys("xyz"));
-	}
-
 	
-//	@Then("^User Enters Credentials to login Page$")
-//	public void user_Enters_Credentials_to_login_Page(DataTable usercredentials) throws Throwable {
-//		 List<Map<String,String>> data = usercredentials.asMaps(String.class,String.class);
-//		 driver.findElement(HomePageObjects.UserName).sendKeys(data.get(0).get("Username")); 
-//		 driver.findElement(HomePageObjects.Password).sendKeys(data.get(0).get("Password"));
-//		 
-//	}
+	@Then("^User Enters Credentials to login Page$")
+	public void user_Enters_Credentials_to_login_Page(DataTable usercredentials) throws Throwable {
+		 List<Map<String,String>> data = usercredentials.asMaps(String.class,String.class);
+		 driver.findElement(HomePageObjects.UserName).sendKeys(data.get(0).get("Username")); 
+		 driver.findElement(HomePageObjects.Password).sendKeys(data.get(0).get("Password"));
+		 
+	}
 
 	@Then("^Click on Login Button$")
 	public void click_on_Login_Button() throws Throwable {
-//		driver.findElement(HomePageObjects.LoginButton).click();
+		driver.findElement(HomePageObjects.LoginButton).click();
 		
 	}
 
