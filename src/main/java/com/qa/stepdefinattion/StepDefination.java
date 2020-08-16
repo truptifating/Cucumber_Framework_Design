@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.pageobjects.HomePageObjects;
+import com.qa.utilities.HandlingScreenshot;
 
 //import com.qa.pageobjects.HomePageObjects;
 
@@ -34,7 +37,7 @@ public class StepDefination
 		  driver = new FirefoxDriver();
 		  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
-		  driver.get("https://www.facebook.com/");
+		
 	}
 
 	@When("^Title of Login Page is facebook$")
@@ -54,7 +57,23 @@ public class StepDefination
 	@Then("^Click on Login Button$")
 	public void click_on_Login_Button() throws Throwable {
 		driver.findElement(HomePageObjects.LoginButton).click();
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		String Actual= driver.getCurrentUrl();
+        String Expected= "https://www.facebook.com/";
+		Assert.assertEquals(Expected, Actual);
+		System.out.println("Login is successfull");
 		
+	}
+	
+	@Then("^Take Screenshot$")
+	public void take_Screenshot() throws Throwable {
+		Thread.sleep(20);
+	    HandlingScreenshot.takeScreenShot();
+	}
+	
+	@Then("^Closing the browser$")
+	public void closing_the_browser() throws Throwable {
+	   driver.quit();
 	}
 
 }

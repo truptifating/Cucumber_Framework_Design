@@ -11,15 +11,14 @@ import org.openqa.selenium.WebDriver;
 public class HandlingScreenshot 
 {
 	public static WebDriver driver;
-	  public static void takeScreenShot(WebDriver driver, String ScreenshotName,String TestCaseName) throws IOException
+	  public static void takeScreenShot() throws IOException
 	  {
 		 
 		  try {
 			   
 			  TakesScreenshot scrShot = ((TakesScreenshot) driver);
 			  File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);    
-			  FileUtils.copyFile(SrcFile, new File ("/home/vishnu/Documents/Trupti_Test_Automation/"+
-			  "New_Automation_Scripts/Cucumber_Automation/Screenshots/"+TestCaseName+"/"+ScreenshotName+".png"));
+			  FileUtils.copyFile(SrcFile, new File ("/home/vishnu/Documents/Trupti_Test_Automation/New_Automation_Scripts/Cucumber_Automation/image.png"));
 			  System.out.println("ScreenShot Taken");	  		  
 			} 
 			catch (Exception e) 
