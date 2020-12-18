@@ -6,7 +6,7 @@ Scenario: Facebook Login Test
 	Then Verify the Objects on Login Page
 	Then User Enters Credentials to login Page
 	|Username     | Password   |
-	|truptifatting@gmail.com| sweettuputony|
+	|truptifatting@gmail.com| xyz|
 #	Then Click on Login Button
 #   Then Take Screenshot
     Then Closing the browser
