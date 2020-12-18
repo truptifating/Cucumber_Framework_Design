@@ -13,5 +13,9 @@ public class HomePageObjects
 	public static final By UserName= By.xpath("//*[@id=\"email\"]");
 	public static final By Password= By.xpath("//*[@id=\"pass\"]");
 	public static final By LoginButton= By.xpath("//*[@id=\"u_0_b\"]");
+	public static final By CreateAccountButton= By.xpath("//*[@id=\"u_0_2\"]");
+	public static final By ForgerAccountLink= By.xpath("//a[contains(text(),'Forgotten account?')]");
+	
+	
     
 }
