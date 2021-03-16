@@ -80,7 +80,7 @@ public class StepDefination
 		driver.findElement(HomePageObjects.LoginButton).click();
 		String ActualTitleAfterLogin=driver.getTitle();
 		String ExpectedTitleAfterLogin="Facebook";
-		Assert.assertEquals(ActualTitleAfterLogin, ExpectedTitleAfterLogin);;
+		Assert.assertEquals(ActualTitleAfterLogin, ExpectedTitleAfterLogin);
 		
 	}
 	
