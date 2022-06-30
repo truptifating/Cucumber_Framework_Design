@@ -15,19 +15,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.pageobjects.HomePageObjects;
-import com.qa.utilities.HandlingScreenshot;
 
-//import com.qa.pageobjects.HomePageObjects;
-
-//import com.qa.pageobjects.HomePageObjects;
-
-//import com.qa.pageobjects.HomePageObjects;
 //import com.qa.utilities.HandlingScreenshot;
+
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -40,14 +36,14 @@ public class StepDefination
 	public static WebDriver driver;	
 	SoftAssert softassert= new SoftAssert();
 	
-	@Given("^Initialize the browser$")
-	public void initialize_the_browser() throws Throwable {
-		  System.setProperty("webdriver.gecko.driver", "/home/vishnu/Documents/Trupti_Test_Automation/New_Automation_Scripts/Cucumber_Automation/geckodriver");  
-		  driver = new FirefoxDriver();
-		  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
-		
-	}
+//	@Given("^Initialize the browser$")
+//	public void initialize_the_browser() throws Throwable {
+//		  System.setProperty("webdriver.chrome.driver", "E:\\Selenium Training\\X_Jars and drivers\\chromedriver_win32.exe");  
+//		  driver = new ChromeDriver();
+//		  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+//		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
+//		
+//	}
 	@Then("^Enter the URl and Verify the Title of Login Page$")
 	public void enter_the_URl_and_Verify_the_Title_of_Login_Page() throws Throwable {
 		driver.get("https://www.facebook.com/");
