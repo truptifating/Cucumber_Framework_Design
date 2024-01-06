@@ -7,8 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="Free_CRM_Project_1/src/main/java/features",
-		glue="Cucumber_Automation/src/main/java/com/qa/stepdefinattion/StepDefination.java",
+		//features="features",
+		features= "E:\\Selenium Training\\Cucumber_Framework_Design\\src\\main\\java\\features\\login.feature",
+		//features= "/Cucumber_Automation/src/main/java/features/login.feature",
+		glue="com.qa.stepdefinattion",
 		dryRun=true
 				
 		)
