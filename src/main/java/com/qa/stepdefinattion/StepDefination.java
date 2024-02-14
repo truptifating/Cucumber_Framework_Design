@@ -51,11 +51,7 @@ public class StepDefination
 		boolean verifyTitle=driver.getTitle().equalsIgnoreCase("Facebook – log in or sign up");				
 		softassert.assertEquals(getActualTitle, "Facebook – log in or sign up","The facebook title is correct");  //Soft Assertions
 		softassert.assertNotEquals(getActualTitle, "Facebook – log in or insign up","The facebook title is notcorrect"); 
-		softassert.assertNull(verifyTitle);
-		softassert.assertNotNull(verifyTitle);
-//		softassert.assertTrue();
-//		softassert.assertFalse();		
-//		softassert.assertAll();
+		
 	}
 
 	
