@@ -41,28 +41,15 @@ public class StepDefination
 		  System.setProperty("webdriver.chrome.driver", "E:\\Selenium Training\\X_Jars and drivers\\chromedriver_win32.exe");  
 		  driver = new ChromeDriver();
 		  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
-		
-	}
-	@Then("^Enter the URl and Verify the Title of Login Page$")
-	public void enter_the_URl_and_Verify_the_Title_of_Login_Page() throws Throwable {
-		driver.get("https://www.facebook.com/");
-		String getActualTitle=driver.getTitle();
-		boolean verifyTitle=driver.getTitle().equalsIgnoreCase("Facebook – log in or sign up");				
-		softassert.assertEquals(getActualTitle, "Facebook – log in or sign up","The facebook title is correct");  //Soft Assertions
-		softassert.assertNotEquals(getActualTitle, "Facebook – log in or insign up","The facebook title is notcorrect"); 
-		
-	}
-
-	
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);			
+	}	
 	@Then("^User Enters Credentials to login Page$")
 	public void user_Enters_Credentials_to_login_Page(DataTable usercredentials) throws Throwable {
 		 List<Map<String,String>> data = usercredentials.asMaps(String.class,String.class);
 		 driver.findElement(HomePageObjects.UserName).sendKeys(data.get(0).get("Username")); 
 		 driver.findElement(HomePageObjects.Password).sendKeys(data.get(0).get("Password"));
 		 System.out.println("Credentials are entered");
-		 
-	}
+		 	}
 
 	@Then("^Click on Login Button$")
 	public void click_on_Login_Button() throws Throwable {
@@ -72,8 +59,15 @@ public class StepDefination
 		driver.findElement(HomePageObjects.LoginButton).click();
 		String ActualTitleAfterLogin=driver.getTitle();
 		String ExpectedTitleAfterLogin="Facebook";
-		Assert.assertEquals(ActualTitleAfterLogin, ExpectedTitleAfterLogin);
-		
+		Assert.assertEquals(ActualTitleAfterLogin, ExpectedTitleAfterLogin);		
+	}
+	@Then("^Enter the URl and Verify the Title of Login Page$")
+	public void enter_the_URl_and_Verify_the_Title_of_Login_Page() throws Throwable {
+		driver.get("https://www.facebook.com/");
+		String getActualTitle=driver.getTitle();
+		boolean verifyTitle=driver.getTitle().equalsIgnoreCase("Facebook – log in or sign up");				
+		softassert.assertEquals(getActualTitle, "Facebook – log in or sign up","The facebook title is correct");  //Soft Assertions
+		softassert.assertNotEquals(getActualTitle, "Facebook – log in or insign up","The facebook title is notcorrect"); 		
 	}
 	
 	@Then("^Verify the Objects on Login Page$")
