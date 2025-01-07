@@ -47,8 +47,7 @@
 			<artifactId>cucumber-java8</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		
 		<!-- <dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
